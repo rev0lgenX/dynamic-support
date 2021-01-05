@@ -52,8 +52,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.preference.PreferenceManager;
 
+import com.google.android.material.transition.platform.MaterialContainerTransform;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
-import com.google.android.material.transition.MaterialContainerTransform;
 import com.pranavpandey.android.dynamic.locale.DynamicLocale;
 import com.pranavpandey.android.dynamic.locale.DynamicLocaleUtils;
 import com.pranavpandey.android.dynamic.support.R;
@@ -248,7 +248,7 @@ public abstract class DynamicSystemActivity extends AppCompatActivity implements
         }
 
         getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
-        mSharedElementTransition = new MaterialContainerTransform(this);
+        mSharedElementTransition = new MaterialContainerTransform();
         ((MaterialContainerTransform) mSharedElementTransition).setScrimColor(Color.TRANSPARENT);
 
         mSharedElementCallback = new SharedElementCallback() {
